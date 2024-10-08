@@ -23,7 +23,7 @@
     <link href={% static "css/tiny-slider.css" %} rel="stylesheet" /> <link
     href={% static "css/style.css" %} rel="stylesheet" />
     <title>
-      Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites
+      Furni Free Bootstrap 5 Template fogr Furniture and Interior Design Websites
       by Untree.co
     </title>
   </head>
@@ -63,13 +63,16 @@
             </li>
 
             <li class="nav-item {% if request.path == '/service/' %}active{% endif %}">
-                <a class="nav-link" href="{% url 'service' %}">Contact</a>
+                <a class="nav-link" href="{% url 'service' %}">Services</a>
             </li>
 
 
+            <li class="nav-item {% if request.path == '/contact/' %}active{% endif %}">
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </li>
+
 
             <li><a class="nav-link" href="Invest.html">Invest</a></li>
-            <li><a class="nav-link" href="about.html">About us</a></li>
 
             <li><a class="nav-link" href="blog.html">Login</a></li>
             <li><a class="nav-link" href="blog.html">Register</a></li>
@@ -93,10 +96,11 @@
      <!-- Start Footer Section -->
     <footer class="footer-section">
         <div class="container relative">
-          <div class="sofa-img">
-            <img src="images/sofa.png" alt="Image" class="img-fluid" />
-          </div>
-
+          {% if request.path == 'service/' %}
+            <div class="sofa-img">
+              <img src={% static "images/istockpho.png" %} alt="Image" class="img-fluid" />
+            </div>
+          {% endif %}
 
           <div class="row g-5 mb-5">
             <div class="col-lg-4">
@@ -104,10 +108,9 @@
                 <a href="#" class="footer-logo">FIN-Tech<span>.</span></a>
               </div>
               <p class="mb-4">
-                Donec facilisis quam ut purus rutrum lobortis. Donec vitae odio
-                quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
-                vulputate velit imperdiet dolor tempor tristique. Pellentesque
-                habitant
+                The modern banking system enables seamless digital transactions,
+                secure financial services, and real-time access to global markets,
+                powered by technology and innovation.
               </p>
 
               <ul class="list-unstyled custom-social">
